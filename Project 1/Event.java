@@ -3,15 +3,19 @@ package priorityqueue;
 /**
  * class Event
  * 
- * void setPriority(int newPriority)
+ * Event()
+ *     Default constructor
+ * Event(int newPriority, String newInfo)
+ *     Initializes variables 
+ * public void setPriority(int newPriority)
  *     newPriority - integer from 0 to 200, anything outside bounds throws error
  *     Set the priority of the event
- * int getPriority()
+ * public int getPriority()
  *     Returns the priority of the event
- * void setInfo(String newInfo)
+ * public void setInfo(String newInfo)
  *     newInfo - New info string, over length of 5 throws error
  *     Set the event info
- * String getInfo()
+ * public String getInfo()
  *     Returns the info string for the event
  *     
  * @author Sean
@@ -19,40 +23,41 @@ package priorityqueue;
  */
 
 public class Event {
-	private int p_priority;
-	private String p_info;
+	private int priority;
+	private String info;
 	
-	Event() {
-		p_priority = 0;
-		p_info = "";
+	public Event() {
+		priority = 0;
+		info = "";
 	}
 	
-	void setPriority(int newPriority) throws RuntimeException {
+	public Event(int newPriority, String newInfo) {
+		setPriority(newPriority);
+		setInfo(newInfo);
+	}
+	
+	public void setPriority(int newPriority) throws RuntimeException {
 		if(newPriority < 0 || newPriority > 200) {
 			throw new RuntimeException();
 		}
 		
-		p_priority = newPriority;
+		priority = newPriority;
 	}
 	
-	int getPriority() {
-		return p_priority;
+	public int getPriority() {
+		return priority;
 	}
 	
-	void setInfo(String newInfo) throws RuntimeException {
+	public void setInfo(String newInfo) throws RuntimeException {
 		if (newInfo.length() > 5) {
 			throw new RuntimeException();
 		}
 		
-		p_info = newInfo;
+		info = newInfo;
 	}
 	
-	String getInfo() {
-		return p_info;
-	}
-	
-	String toString() {
-		return p_info+" ";
+	public String getInfo() {
+		return info;
 	}
 	
 }
