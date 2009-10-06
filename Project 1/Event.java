@@ -33,4 +33,8 @@ public class Event {
 		return p_info;
 	}
 	
+	String toString() {
+		return p_info+" ";
+	}
+	
 }
