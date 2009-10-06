@@ -11,7 +11,7 @@ public class Event {
 	
 	void setPriority(int newPriority) throws RuntimeException {
 		if(newPriority < 0 || newPriority > 200) {
-			throw new RuntimeException();
+			throw new RuntimeException("Priority is not between 0 and 200");
 		}
 		
 		p_priority = newPriority;
@@ -23,7 +23,7 @@ public class Event {
 	
 	void setInfo(String newInfo) throws RuntimeException {
 		if (newInfo.length() > 5) {
-			throw new RuntimeException();
+			throw new RuntimeException("String must been less than 5 characters long");
 		}
 		
 		p_info = newInfo;
